@@ -14,9 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include,path
+
+    # The "" is used for the index of the website
+    # when a user enters website domain, it automatically
+    # shows the website instead of nagivating to a directory
 
 urlpatterns = [
-
+    path('', include('worldcup.urls')),
     path('Hello Soccer Fans/', admin.site.urls),
 ]
