@@ -1,0 +1,3 @@
+# Soccer blog
+
+Django project
