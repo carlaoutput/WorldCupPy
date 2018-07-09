@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include,path
+from django.conf.urls import url
 
     # The "" is used for the index of the website
     # when a user enters website domain, it automatically
     # shows the website instead of nagivating to a directory
 
 urlpatterns = [
-    path('', include('worldcup.urls')),
-    path('Hello Soccer Fans/', admin.site.urls),
+
+    url(r"^admin/", admin.site.urls),
 ]
