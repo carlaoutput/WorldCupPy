@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap3',    # added by CarlaP.
-    'accounts'
+    'accounts',
+    'worldcup',
 ]
 
 MIDDLEWARE = [
