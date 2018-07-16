@@ -1,6 +1,6 @@
 # WorldCupPython Website Full Stack developed in Django
 
-Team members:
+CIS4930. Team #9. Project. Website: World Cup for americans, members:
 
 Carla Pastor
 
@@ -8,24 +8,26 @@ Mauricio Espinoza
 
 Ottoniel Javitt
 
-
-Team #9. CIS4930. Project. Website: World Cup for americans
-
 ******  EN PROCESO *****
 
+Currently, the libraries needed to run the program are:
 
-*** version 2.0 *** revision 2 out Of 4. Rv= 2cp,
+(Managing Packages with pip)
 
-In this unique repo the members of the group should work, i.e push the progress to this repo.
-The server is set up already and ready to rock and roll :) 
+pip install Django
 
-Libraries that need to be install:
-```
-pip3 install bs4
-pip3 install requests
-pip3 install tweepy
-pip3 install Django
-```    
+pip  install bs4
+
+pip install requests
+
+pip install tweepy
+
+pip install django-bootstrap3.
+
+A virtual environment it is recommended;
+
+python3 -m venv myvenv
+
 Note: that it would be better to install these libraries using virutalenv command
 
-Ubuntu - DigitalOcean (server) - nginx - PyCharm - Django 2 / Python 3
+We are using Ubuntu - DigitalOcean (server) - nginx - PyCharm - Django 2.0 / Python 3
