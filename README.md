@@ -1,6 +1,6 @@
 # WorldCupPython Website Full Stack developed in Django
 
-CIS4930. Team #9. Project. Website: World Cup for americans, members:
+CIS4930. Team9. Project. Website: World Cup for americans, members:
 
 Carla Pastor
 
@@ -8,7 +8,7 @@ Mauricio Espinoza
 
 Ottoniel Javitt
 
-******  EN PROCESO *****
+******  EN PROCESO ***** Now, testing it at http://www.worldcupforamericans.com/
 
 Currently, the libraries needed to run the program are:
 
