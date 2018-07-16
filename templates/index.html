@@ -1,78 +1,83 @@
-<!DOCTYPE html>
-{% load staticfiles %}
-{% url 'worldcup:scores' as scores %}
-{% url 'worldcup:twitter' as twitter %}
-{% url 'worldcup:index' as homepage %}
-{% url 'worldcup:teams' as teams %}
+{% extends "base.html" %}
 
-<html lang="en">
-    <head>
-        <title>World Cup For Americans</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
-    </head>
+{% block content %}
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <img src="{% static 'images/worldcup.png' %}" class="rounded float-right" alt="..." style="max-height: 75px">
-        <a class="navbar-brand" href="{{homepage}}"> Home Page </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">              
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{scores}}"> Scores <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{twitter}}"> Twitter Feed</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{teams}}"> Teams</a>
-                </li>
+    <div class="jumbotron">
+            <div class="m-auto" style="width: 560px;clear:left ">
+                    <iframe width="560" height="315" src= "https://www.youtube.com/embed/BL5iaUSlpqA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+            </div>
+                
+            <div class="m-auto" style="width: 560px;clear:right;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/B10QWgsAWzw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+            </div>	
 
-            </ul>
+
+      <!-- comment out by Carla to modif it-->  
+      <!--   <div class="m-auto" style="width: 560px; ">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/B10QWgsAWzw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
         </div>
-    </nav>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/B10QWgsAWzw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen ></iframe>
-    <p>
-        The 2018 FIFA World Cup is the 21st FIFA World Cup, a quadrennial international football tournament
-        contested by the men's national teams of the member associations of FIFA.
-    </p> 
+    </div>  -->
+
     
-    <p>     
-        It is currently ongoing in Russia starting from 14 June and will end with the final match on 15 July 2018.
-        This is the first World Cup to be held in Eastern Europe,and the eleventh time that it has been held in Europe. For the first time the tournament takes place on two continents – Europe and Asia.
-        All but one of the stadium venues are in European Russia in order to keep travel time manageable. At an estimated cost of over $14.2 billion, it is the most expensive World Cup ever. 
-        This is also the first World Cup where video assistant referees (VARs) have been utilised. </p>
-    <p>
-        The final tournament involves 32 national teams, which include 31 teams determined through qualifying competitions and the automatically qualified host team. 
-        Of the 32 teams, 20 made back-to-back appearances following the last tournament in 2014, including defending champions Germany, while both Iceland and Panama made their first appearances at a FIFA World Cup.
-        A total of 64 matches will be played in 12 venues located in 11 cities. The final will take place on 15 July at the Luzhniki Stadium in Moscow
-    </p>
+    <div class="container text-justify">
+        <p class="">
+            The 2018 FIFA World Cup is the 21st FIFA World Cup, a quadrennial international football tournament
+            contested by the men's national teams of the member associations of FIFA.
+        </p>
 
-    <div class="container mycontent">
-
-        {% block content %}
-   
-        {% endblock %}
-   
+        <p>
+            It is currently ongoing in Russia starting from 14 June and will end with the final match on 15 July 2018.
+            This is the first World Cup to be held in Eastern Europe,and the eleventh time that it has been held in Europe. For the first time the tournament takes place on two continents – Europe and Asia.
+            All but one of the stadium venues are in European Russia in order to keep travel time manageable. At an estimated cost of over $14.2 billion, it is the most expensive World Cup ever.
+            This is also the first World Cup where video assistant referees (VARs) have been utilised. </p>
+        <p>
+            The final tournament involves 32 national teams, which include 31 teams determined through qualifying competitions and the automatically qualified host team.
+            Of the 32 teams, 20 made back-to-back appearances following the last tournament in 2014, including defending champions Germany, while both Iceland and Panama made their first appearances at a FIFA World Cup.
+            A total of 64 matches will be played in 12 venues located in 11 cities. The final will take place on 15 July at the Luzhniki Stadium in Moscow
+        </p>
     </div>
+    <div class="container text-center">
+            <p class="">
+               _______________________________________________________________________________________________________________________________________________________________________
+            </p>
+        </div>
 
-    <h2> Today's Matches </h2>
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th scope ="col"> Time </th>
-                <th scope="col">Match</th>
-            </tr>
-        </thead>
-        {% for item in match_query %}
-            <tbody>
-            <tr>
-                <td> {{ item.startTime }}</td>
-                <td> {{ item.LeftTeam }} vs. {{item.RightTeam}} </td>
-            </tr>
-            </tbody>
-        {% endfor %}
-    </table>
-</html>
+    <div class="container">
+
+        <h2> Today's Matches </h2>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope ="col"> Time </th>
+                    <th scope="col">Match</th>
+                </tr>
+            </thead>
+            {% for item in match_query %}
+                <tbody>
+                <tr>
+                    <td> {{ item.startTime }}</td>
+                    <td> {{ item.LeftTeam }} vs. {{item.RightTeam}} </td>
+                </tr>
+                </tbody>
+            {% endfor %}
+        </table>
+
+    </div>
+    <div class="container text-center">
+            <p class="">
+               _______________________________________________________________________________________________________________________________________________________________________
+            </p>
+        </div>
+    <div class="container text-center">
+            <p class="">
+                    <h2>   Are Americans WATCHING The 2018 World Cup? </h2>  
+            </p>
+            <div class="m-auto" style="width: 560px;clear:left ">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/QUgAM64so4U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+
+            </div>
+                
+        </div>
+
+        
+{% endblock %}

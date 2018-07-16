@@ -1,59 +1,79 @@
 <!DOCTYPE html>
 {% load staticfiles %}
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Soccer Social</title>
-    <!-- Latest compiled and minified CSS -->
+{% url 'worldcup:scores' as scores %}
+{% url 'worldcup:twitter' as twitter %}
+{% url 'worldcup:index' as homepage %}
+{% url 'worldcup:teams' as teams %}
+{% url 'worldcup:blog' as blog %}
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<html lang="en">
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    {% block head %}
+        <title>World Cup For Americans</title>
+    {% endblock %}
+    </head>
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="nav navbar-brand" href="{{homepage}}">
+            <img src="{% static 'images/worldcup.png' %}" class="rounded" alt="..." style="max-height: 75px">
+        </a>
+        <a class="nav navbar-brand" href="{{homepage}}">
+          <h1>World Cup For Americans</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-brand" id="navbarNav">
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{history}}"> |  History </a>
+                  </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{teams}}"> |  Teams </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{scores}}"> |  Scores <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{twitter}}"> |  Twitter Feed </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{{blog}}"> |  Social Blog </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{aboutus}}"> |  About Us </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.fifa.com/worldcup/"> |  FIFA/worldcup </a>
+                </li>
 
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
-    <link rel="stylesheet" href="{% static 'simpleBlog/css/master.css'%}">
-
-
-  </head>
-
-  <body>
-<!-- Navegation bar added by CarlaP.  copy directly from documentation -->
-    <nav class="navbar  mynav" role="navigation" id="navbar">
-    		<div class="container">
-
-            <a class="navbar-brand mynav" href="{% url 'home' %}">Soccer Social</a>
-
-                <ul class="nav navbar-nav navbar-right"> <!-- mi unordered list, nothing more than a couple of bottons-->
-                    {% if user.is_authenticated %}
-                          <li><a href="#">Post</a></li>
-                          <li><a href="#">Groups</a></li>
-                          <li><a href="#">Create Group</a></li>
-                          <li><a href="{% url 'accounts:logout' %}">Log out</a></li>
-                    {% else %}
-                          <li><a href="#">Groups</a></li>
-                          <li><a href="{% url 'accounts:login' %}" class="btn btn-simple">Log in</a></li>
-                          <li><a href="{% url 'accounts:signup' %}" class="btn btn-simple">Sign up</a></li>
-    				 {% endif %}
             </ul>
-
-
-    	    </div>
+        </div>
     </nav>
 
-    <div class="container mycontent">
+    {% block content %}
 
-     {% block content %}
+    {% endblock %}
 
-     {% endblock %}
+    <footer class="card-footer">
+        <p class="m-1">© 2018 Team9, CIS4930.</p>
+    </footer>
 
-    </div>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
-  </body>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
 
 </html>

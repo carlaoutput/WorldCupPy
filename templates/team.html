@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-{% load staticfiles %}
+{% extends "base.html" %}
 
-{% url 'worldcup:scores' as scores %}
-{% url 'worldcup:twitter' as twitter %}
-{% url 'worldcup:index' as homepage %}
-{% url 'worldcup:teams' as teams %}
-
-<html lang="en">
-    <head>
+    {% block head %}
         <title> {{ team_query.teamName }} </title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
         <style>
             body
             {
@@ -20,7 +11,10 @@
                 background-size: 600px 600px;
             }
         </style>
-    </head>
+    {% endblock %}
+
+{% block content %}
+
     <div class="info">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <img src="{% static 'images/'|add:team_query.teamName|add:'Logo.png' %}" class="rounded float-right" alt="..." style="max-height: 75px">
@@ -28,7 +22,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">              
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
                         <a class="nav-link" href="{{scores}}"> Scores <span class="sr-only">(current)</span></a>
@@ -65,4 +59,5 @@
         </table>
         <img src = "{% static 'images/'|add:team_query.teamName|add:'.jpg' %}" class= "rounded" style = "max-height: 400px">
     </div>
-</html>
+
+{% endblock %}
