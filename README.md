@@ -15,13 +15,19 @@ Currently, the libraries needed to run the program are:
 (Managing Packages with pip)
 
 pip install Django
+
 pip  install bs4
+
 pip install requests
+
 pip install tweepy
 
 pip install django-bootstrap3
+
 pip install misaka
+
 pip install slugify
+
 pip install django-braces
 
 
