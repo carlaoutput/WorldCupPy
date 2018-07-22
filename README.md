@@ -38,3 +38,13 @@ python3 -m venv myvenv
 Note: that it would be better to install these libraries using virutalenv command
 
 We are using Ubuntu - DigitalOcean (server) - nginx - PyCharm - Django 2.0 / Python 3
+
+****** Additional repo: ******
+
+https://github.com/carlaoutput/django-blog
+
+
+********************************
+
+
+
