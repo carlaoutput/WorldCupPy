@@ -1,0 +1,41 @@
+/*https://codepen.io/jcvno/pen/aGBsy   
+html 
+
+<div class="soccer"></div>
+
+css ....below
+
+*/
+
+.soccer {
+    background: url(http://upload.wikimedia.org/wikipedia/en/e/ec/Soccer_ball.svg);
+    background-size: 100px 100px;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    -webkit-animation:roll 4.5s infinite;
+    -moz-animation:roll 4.5s infinite;
+    animation:roll 4.5s infinite;
+  }
+  
+  @-moz-keyframes roll {  
+    0% {left:0px; -webkit-transform: rotate(-360deg);}
+    50% {left:1000px; -webkit-transform: rotate(360deg);}
+    100% {left:0px; -webkit-transform: rotate(-360deg);}
+  }
+  @-webkit-keyframes roll { 
+    0% {left:0px; -webkit-transform: rotate(-360deg);}
+    50% {left:1000px; -webkit-transform: rotate(360deg);}
+    100% {left:0px; -webkit-transform: rotate(-360deg);}
+  }
+  
+  @keyframes roll { 
+    0% {left:0px; -webkit-transform: rotate(-360deg);}
+    50% {left:1000px; -webkit-transform: rotate(360deg);}
+    100% {left:0px; -webkit-transform: rotate(-360deg);}
+  }
+  
+  .world-cup {
+    color: #82AE6F;
+    text-align: center;
+  }
