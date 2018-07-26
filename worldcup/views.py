@@ -11,6 +11,7 @@ from pytz import timezone
 
 from .forms import search_team_form
 
+
 def index(request):
     tz = timezone('America/New_York')
     right_now = datetime.now(tz)
@@ -18,6 +19,15 @@ def index(request):
 
     today_matches = Match.objects.filter(date = today_date)
     return render(request, 'index.html',{'match_query':today_matches})
+
+
+def history(request):
+    return render(request, 'history.html')
+
+
+def contact(request):
+    return render(request, 'contact.html')
+
 
 def scores(request):
     score_list = get_scores()

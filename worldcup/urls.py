@@ -7,5 +7,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('scores/', views.scores, name='scores'),
     path('twitter/', views.twitterfeed, name='twitter'),
-    path('teams/', views.search_team, name="teams")
+    path('teams/', views.search_team, name="teams"),
+    path('history/', views.history, name="history"),
+    path('contact/', views.contact, name="contact"),
 ]
