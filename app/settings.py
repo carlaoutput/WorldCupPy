@@ -25,7 +25,7 @@ SECRET_KEY = '@)rl(-us(v+1p#@d^h2pob6!#i9fv=6^jx-!i!*-&wxch%c#2@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.worldcupforamericans.com', '127.0.0.1' , '104.131.14.211'] 
+ALLOWED_HOSTS = ['www.worldcupforamericans.com', '127.0.0.1' , '104.131.14.211', 'localhost']
 #Plz do not use '*' for production. This completely bypasses the reason and security of the allowed hosts.
 
 
@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bootstrap3',    
+    'bootstrap3',
     'accounts',
     'worldcup',
+    'polls'
 ]
 
 MIDDLEWARE = [
