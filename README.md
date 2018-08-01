@@ -8,9 +8,9 @@ Mauricio Espinoza
 
 Ottoniel Javitt
 
-******  EN PROCESO ***** Now, testing it at http://www.worldcupforamericans.com/
+http://www.worldcupforamericans.com/
 
-Currently, the libraries needed to run the program are:
+linkded www.ussoccer.us
 
 (Managing Packages with pip)
 
@@ -30,6 +30,7 @@ pip install slugify
 
 pip install django-braces
 
+(check requirements.txt  / Command used:  $ pip freeze > requirements.txt)
 
 A virtual environment it is recommended;
 
@@ -39,12 +40,13 @@ Note: that it would be better to install these libraries using virutalenv comman
 
 We are using Ubuntu - DigitalOcean (server) - nginx - PyCharm - Django 2.0 / Python 3
 
-****** Additional repo: ******
+****** Additional repo to ussoccer.live : ******
 
 https://github.com/carlaoutput/django-blog
 
+For more information contact us: contact@worldcupforamericans.com
 
-********************************
+*******************************************************************
 
 
 
