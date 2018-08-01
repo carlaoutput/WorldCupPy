@@ -21,8 +21,8 @@ from . import views
 # Blog connexions by CarlaPastor
 urlpatterns = [
     url(r"^", include("worldcup.urls", namespace="worldcup")),
+    url(r"^", include("polls.urls", namespace="polls")),
     url(r"^admin/", admin.site.urls),
     url(r"^accounts/", include("accounts.urls", namespace="accounts")),
     url(r"^thanks/$", views.ThanksPage.as_view(), name="thanks"),
 ]
-
