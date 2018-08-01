@@ -10,7 +10,7 @@ Ottoniel Javitt
 
 http://www.worldcupforamericans.com/
 
-linkded www.ussoccer.us
+linkded www.ussoccer.live
 
 (Managing Packages with pip)
 
