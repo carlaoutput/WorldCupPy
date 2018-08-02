@@ -12,9 +12,9 @@ from pytz import timezone
     to show the file path. Insert the absolute path into sys.path.append if you are
     going to run this file locally.
 '''
-sys.path.append("/home/mauricio/Documents/python_class/WorldCupPy")
+sys.path.append("/home/mauricio/Documents/python_class/python_project/WorldCupPy")
 #sys.path.append("/mnt/c/Users/meec/Documents/pythonproj/python_soccer")
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "WorldCupPy.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "app.settings")
 
 import django
 django.setup()

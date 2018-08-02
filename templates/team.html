@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load staticfiles %}
     {% block head %}
         <title> {{ team_query.teamName }} </title>
         <style>
@@ -15,40 +15,18 @@
 
 {% block content %}
 
-    <div class="info">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <img src="{% static 'images/'|add:team_query.teamName|add:'Logo.png' %}" class="rounded float-right" alt="..." style="max-height: 75px">
-            <a class="navbar-brand" href="{{homepage}}"> Home Page </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{scores}}"> Scores <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{twitter}}"> Twitter Feed</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{teams}}"> Teams</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
         <table class="table">
             <thead>
             <tr>
                 <th scope="col">Team</th>
-                <th scope="col">isElimated</th>
+                <th scope="col">isEliminated</th>
                 <th scope="col">Total Goals </th>
             </tr>
             </thead>
             <tbody>
                 <tr>
                     <td> {{ team_query.teamName }}</td>
-                    {% if team_query.isElimated == True %}
+                    {% if team_query.isEliminated == True %}
                         <td> Yes </td>
                     {% else %}
                         <td> No </td>
